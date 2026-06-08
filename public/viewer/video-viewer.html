@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iris E-Campus - Viewer</title>
+  <link rel="stylesheet" href="/public/viewer/viewer.css">
+</head>
+<body>
+  <div class="viewer-container">
+    <h2 id="title">Resource title</h2>
+    <video id="videoPlayer" controls preload="metadata" width="100%" src=""></video>
+    <div class="progress-area">
+      <div id="progressPercent">0%</div>
+      <div class="progress-track"><div id="progressFill" style="width:0%"></div></div>
+    </div>
+    <button id="markComplete">Mark as complete</button>
+  </div>
+  <script type="module" src="/public/js/progress.js"></script>
+</body>
+</html>

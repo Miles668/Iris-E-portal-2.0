@@ -1,0 +1,17 @@
+:root{
+  --primary:#0b57a4;
+  --accent:#ffd54f;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --muted:#6b7280;
+}
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:#111;margin:0;padding:20px}
+.viewer-container{max-width:900px;margin:0 auto;background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(11,87,164,0.08)}
+.progress-area{margin-top:12px}
+.progress-track{background:#e6eef8;height:10px;border-radius:6px;overflow:hidden}
+.progress-track div{background:var(--primary);height:100%;width:0}
+#progressPercent,#pdfProgressPercent{font-weight:600;margin-bottom:6px}
+.pdf-container{display:flex;justify-content:center}
+.pdf-nav{display:flex;gap:10px;align-items:center;margin-top:12px}
+button{background:var(--primary);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+button:disabled{opacity:.6}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Teacher - Upload Results</title>
+  <link rel="stylesheet" href="/public/css/main.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Upload Student Result</h1>
+    <form id="resultForm">
+      <label>Student email or ID<br/><input id="studentId" required /></label>
+      <label>Subject<br/><select id="subjectId"></select></label>
+      <label>Term<br/><input id="term" value="2026 Term 1" required /></label>
+      <label>Score<br/><input id="score" type="number" min="0" max="100" step="0.01" required /></label>
+      <label>Grade<br/><input id="grade" /></label>
+      <label>Comments<br/><textarea id="comments"></textarea></label>
+      <label>Attach PDF (optional)<br/><input id="file" type="file" accept="application/pdf" /></label>
+      <button type="submit">Upload Result</button>
+    </form>
+  </main>
+  <script type="module" src="/public/reports/reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iris E-Campus - PDF Viewer</title>
+  <link rel="stylesheet" href="/public/viewer/viewer.css">
+</head>
+<body>
+  <div class="viewer-container">
+    <h2 id="title">PDF Title</h2>
+    <div id="pdfContainer" class="pdf-container"><canvas id="pdfCanvas"></canvas></div>
+    <div class="progress-area">
+      <div id="pdfProgressPercent">0%</div>
+      <div class="progress-track"><div id="pdfProgressFill" style="width:0%"></div></div>
+    </div>
+    <div class="pdf-nav">
+      <button id="prevPage">Prev</button>
+      <span id="pageInfo"></span>
+      <button id="nextPage">Next</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script type="module" src="/public/js/pdf-progress.js"></script>
+</body>
+</html>
