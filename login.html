@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Iris E-Campus</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-box">
+            <!-- Logo -->
+            <div class="login-logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="8" fill="currentColor"/>
+                </svg>
+                <h1>Iris E-Campus</h1>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-large btn-primary btn-block">Sign In</button>
+
+                <div class="login-links">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+
+            <!-- Loading Spinner -->
+            <div id="loginSpinner" class="spinner hidden"></div>
+
+            <!-- Error Message -->
+            <div id="loginError" class="alert alert-error hidden"></div>
+
+            <!-- Success Message -->
+            <div id="loginSuccess" class="alert alert-success hidden"></div>
+        </div>
+
+        <!-- Login Info -->
+        <div class="login-info">
+            <h2>Welcome to Iris E-Campus</h2>
+            <p>Your modern learning management platform</p>
+            <ul class="login-features">
+                <li>✓ Upload and share learning materials</li>
+                <li>✓ Track student progress</li>
+                <li>✓ Manage announcements</li>
+                <li>✓ Access resources anytime</li>
+            </ul>
+            <p class="login-footer">Personalized Tutoring for Real Results</p>
+        </div>
+    </div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

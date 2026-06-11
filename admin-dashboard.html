@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Iris E-Campus</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="currentColor"/>
+            </svg>
+            <span>Iris E-Campus</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                <span class="icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="#teachers" class="nav-item" data-page="teachers">
+                <span class="icon">👨‍🏫</span>
+                <span>Manage Teachers</span>
+            </a>
+            <a href="#students" class="nav-item" data-page="students">
+                <span class="icon">👨‍🎓</span>
+                <span>Manage Students</span>
+            </a>
+            <a href="#subjects" class="nav-item" data-page="subjects">
+                <span class="icon">📚</span>
+                <span>Manage Subjects</span>
+            </a>
+            <a href="#announcements" class="nav-item" data-page="announcements">
+                <span class="icon">📢</span>
+                <span>Announcements</span>
+            </a>
+            <a href="#reports" class="nav-item" data-page="reports">
+                <span class="icon">📈</span>
+                <span>Reports</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+                <h2 id="pageTitle">Dashboard</h2>
+            </div>
+            <div class="nav-right">
+                <button class="btn-icon" id="notificationBtn">🔔</button>
+                <div class="user-menu">
+                    <img id="userAvatar" src="https://via.placeholder.com/40" alt="User" class="avatar">
+                    <button id="userMenuBtn" class="user-menu-btn">
+                        <span id="userName">Admin</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="user-dropdown hidden">
+                        <a href="#profile">Profile</a>
+                        <a href="#settings">Settings</a>
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <section class="dashboard-content">
+            <!-- Dashboard Page -->
+            <div id="dashboardPage" class="page active">
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍🏫</div>
+                        <div class="stat-info">
+                            <h3>Total Teachers</h3>
+                            <p id="totalTeachers" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍🎓</div>
+                        <div class="stat-info">
+                            <h3>Total Students</h3>
+                            <p id="totalStudents" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <h3>Total Subjects</h3>
+                            <p id="totalSubjects" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📄</div>
+                        <div class="stat-info">
+                            <h3>Total Resources</h3>
+                            <p id="totalResources" class="stat-number">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-section">
+                    <h3>Recent Activity</h3>
+                    <div id="recentActivity" class="activity-list"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Notifications -->
+    <div id="notifications" class="notifications-container"></div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

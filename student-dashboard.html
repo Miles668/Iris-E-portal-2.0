@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Iris E-Campus</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="50" cy="50" r="35" fill="none" stroke="currentColor" stroke-width="2"/>
+                <circle cx="50" cy="50" r="8" fill="currentColor"/>
+            </svg>
+            <span>Iris E-Campus</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                <span class="icon">📊</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="#subjects" class="nav-item" data-page="subjects">
+                <span class="icon">📚</span>
+                <span>My Subjects</span>
+            </a>
+            <a href="#resources" class="nav-item" data-page="resources">
+                <span class="icon">🎥</span>
+                <span>Resources</span>
+            </a>
+            <a href="#progress" class="nav-item" data-page="progress">
+                <span class="icon">📈</span>
+                <span>Progress</span>
+            </a>
+            <a href="#announcements" class="nav-item" data-page="announcements">
+                <span class="icon">📢</span>
+                <span>Announcements</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+                <h2 id="pageTitle">Dashboard</h2>
+            </div>
+            <div class="nav-right">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search resources...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button class="btn-icon" id="notificationBtn">🔔</button>
+                <div class="user-menu">
+                    <img id="userAvatar" src="https://via.placeholder.com/40" alt="User" class="avatar">
+                    <button id="userMenuBtn" class="user-menu-btn">
+                        <span id="userName">Student</span>
+                        <span>▼</span>
+                    </button>
+                    <div class="user-dropdown hidden">
+                        <a href="#profile">Profile</a>
+                        <a href="#settings">Settings</a>
+                        <a href="#" id="logoutBtn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <section class="dashboard-content">
+            <!-- Dashboard Page -->
+            <div id="dashboardPage" class="page active">
+                <!-- Learning Progress Overview -->
+                <div class="progress-overview">
+                    <h3>Your Learning Progress</h3>
+                    <div class="overall-progress">
+                        <div class="progress-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" class="progress-bg"></circle>
+                                <circle cx="50" cy="50" r="45" class="progress-fill" id="overallProgressFill"></circle>
+                            </svg>
+                            <div class="progress-text">
+                                <span id="overallProgressPercent">0%</span>
+                                <small>Complete</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subject Progress Cards -->
+                <div class="dashboard-section">
+                    <h3>Your Subjects</h3>
+                    <div id="subjectProgressCards" class="subjects-grid"></div>
+                </div>
+
+                <!-- Announcements -->
+                <div class="dashboard-section">
+                    <h3>Latest Announcements</h3>
+                    <div id="latestAnnouncements" class="announcements-list"></div>
+                </div>
+            </div>
+
+            <!-- Subjects Page -->
+            <div id="subjectsPage" class="page">
+                <div class="page-header">
+                    <h3>My Subjects</h3>
+                </div>
+                <div id="subjectsList" class="subjects-grid"></div>
+            </div>
+
+            <!-- Resources Page -->
+            <div id="resourcesPage" class="page">
+                <div class="page-header">
+                    <h3>Learning Resources</h3>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <select id="filterSubject" class="filter-select">
+                        <option value="">All Subjects</option>
+                    </select>
+                    <select id="filterType" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="video">Videos</option>
+                        <option value="pdf">PDFs</option>
+                        <option value="pptx">Presentations</option>
+                        <option value="docx">Documents</option>
+                    </select>
+                </div>
+
+                <!-- Resources Grid -->
+                <div id="resourcesList" class="resources-grid"></div>
+            </div>
+
+            <!-- Progress Page -->
+            <div id="progressPage" class="page">
+                <div class="page-header">
+                    <h3>Learning Progress</h3>
+                </div>
+
+                <!-- Overall Statistics -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <h3>Subjects</h3>
+                            <p id="enrolledSubjects" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <h3>Completed</h3>
+                            <p id="completedResources" class="stat-number">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <h3>Watch Time</h3>
+                            <p id="totalWatchTime" class="stat-number">0h</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-info">
+                            <h3>Avg Progress</h3>
+                            <p id="averageProgress" class="stat-number">0%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Table -->
+                <div class="dashboard-section">
+                    <h3>Detailed Progress</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Resource</th>
+                                    <th>Subject</th>
+                                    <th>Type</th>
+                                    <th>Progress</th>
+                                    <th>Watch Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="progressTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Announcements Page -->
+            <div id="announcementsPage" class="page">
+                <div class="page-header">
+                    <h3>Announcements</h3>
+                </div>
+                <div id="announcementsList" class="announcements-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal hidden">
+        <div class="modal-content modal-xlarge">
+            <div class="modal-header">
+                <h3 id="videoTitle">Video Player</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="video-player-container">
+                <video id="videoPlayer" class="video-player" controls>
+                    <source id="videoSource" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Video Stats -->
+                <div class="video-stats">
+                    <div class="stat">
+                        <span class="stat-label">👥 Viewers:</span>
+                        <span id="viewerCount" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">⏱️ Duration:</span>
+                        <span id="videoDuration" class="stat-value">00:00</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-section">
+                    <label>Your Progress</label>
+                    <div class="progress-bar">
+                        <div id="videoProgressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressPercentage">0% Complete</p>
+                </div>
+
+                <!-- Video Description -->
+                <div class="video-description">
+                    <h4>About this Video</h4>
+                    <p id="videoDescription"></p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="video-actions">
+                    <button id="downloadBtn" class="btn btn-secondary">📥 Download</button>
+                    <button id="markCompleteBtn" class="btn btn-primary">✓ Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdfModal" class="modal hidden">
+        <div class="modal-content modal-xlarge">
+            <div class="modal-header">
+                <h3 id="pdfTitle">PDF Viewer</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="pdf-viewer-container">
+                <iframe id="pdfViewer" src="" style="width:100%; height:600px; border:none;"></iframe>
+                <div class="pdf-actions">
+                    <a id="pdfDownloadBtn" href="" download class="btn btn-primary">📥 Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div id="notifications" class="notifications-container"></div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/student.js"></script>
+</body>
+</html>
