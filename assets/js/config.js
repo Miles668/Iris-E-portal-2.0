@@ -2,7 +2,7 @@
 
 const CONFIG = {
     // Supabase Configuration - UPDATE WITH YOUR VALUES
-    SUPABASE_URL: 'sb_publishable_UQs1s_hxUIlUqglaZEcGIg_Au-cll4i',
+    SUPABASE_URL: 'tqltylavwrsemhgdnorr',
     SUPABASE_ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxbHR5bGF2d3JzZW1oZ2Rub3JyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExOTIxNDksImV4cCI6MjA5Njc2ODE0OX0.QyCfEf7Pif3-ZfhhwJ8PWUemi37orIZpiX2ZzpCRAyg ',
     
     // API Endpoints
