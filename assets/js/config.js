@@ -2,8 +2,8 @@
 
 const CONFIG = {
     // Supabase Configuration - UPDATE WITH YOUR VALUES
-    SUPABASE_URL: 'https://your-project.supabase.co',
-    SUPABASE_ANON_KEY: 'your-anon-key-here',
+    SUPABASE_URL: 'https://tqltylavwrsemhgdnorr.supabase.co/rest/v1/ ',
+    SUPABASE_ANON_KEY: ' sb_publishable_UQs1s_hxUIlUqglaZEcGIg_Au-cll4i',
     
     // API Endpoints
     API_BASE: '/api',
